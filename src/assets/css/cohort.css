@@ -1,0 +1,80 @@
+/** cohort data table **/
+.cohort-data-container {
+
+}
+
+.cohort-data-container table {
+  border: none !important;
+  border-collapse: collapse !important;
+}
+
+.cohort-data-container table * {
+  border: none !important;
+}
+
+.cohort-data-container table th {
+  background-color: rgba(8, 8, 8, 0) !important;
+  color: #000000 !important;
+  font-size: 13px !important;
+  font-weight: bold !important;
+  border-bottom: 1.5px solid darkgrey !important;
+  padding: 8px !important;
+}
+
+.cohort-data-container table td {
+  border-bottom: 1px solid #e2e2e2 !important;
+  background-color: #fff !important;
+  text-align: center !important;
+}
+
+.tabs-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.tabs-container .cohort-tab {
+  padding: 5px 10px;
+  margin-right: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #272727;
+  font-size: 14px;
+  cursor: pointer;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.tabs-container .cohort-tab:hover {
+  color: #ffc107;
+  background-color: #111;
+}
+
+.tabs-container .cohort-tab:active {
+  color: #ffc107;
+  background-color: #111;
+}
+
+.tabs-container .cohort-tab:focus {
+  color: #ffc107;
+  background-color: #111;
+}
+
+.tabs-container .cohort-tab.active {
+  color: #ffc107;
+  background-color: #000;
+}
+
+.cohort-loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 2;
+}

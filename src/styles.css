@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+.panel-group .ui-inputtext {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+}
+
+.panel-group .ui-inputtext:focus {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+}
+
+.panel-group .ui-calendar button {
+  background-color: #e6e6e6;
+  border: none;
+  color: #bbb;
+}

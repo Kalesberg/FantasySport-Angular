@@ -1,0 +1,94 @@
+{
+  "project": {
+    "version": "1.0.0-beta.28.3",
+    "name": "application"
+  },
+  "apps": [
+    {
+      "root": "src",
+      "outDir": "dist",
+      "assets": [
+        "assets",
+        "favicon.ico"
+      ],
+      "index": "index.html",
+      "main": "main.ts",
+      "polyfills": "polyfills.ts",
+      "test": "test.ts",
+      "tsconfig": "tsconfig.json",
+      "prefix": "app",
+      "styles": [
+        "../node_modules/c3/c3.min.css",
+        "assets/css/graph.css",
+        "styles.css"
+      ],
+      "scripts": [
+        "assets/plugins/jquery/jquery-2.1.4.min.js",
+        "assets/plugins/jquery-ui/jquery-ui.min.js",
+        "assets/jquery.cookie.js",
+        "assets/plugins/jquery-blockui/jquery.blockui.js",
+        "assets/plugins/bootstrap/js/bootstrap.min.js",
+        "assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js",
+        "assets/plugins/switchery/switchery.min.js",
+        "assets/plugins/uniform/jquery.uniform.min.js",
+        "assets/plugins/offcanvasmenueffects/js/classie.js",
+        "assets/plugins/waves/waves.js",
+        "assets/plugins/3d-bold-navigation/js/main.js",
+        "assets/plugins/waypoints/jquery.waypoints.min.js",
+        "assets/plugins/jquery-counterup/jquery.counterup.min.js",
+        "assets/plugins/flot/jquery.flot.min.js",
+        "assets/plugins/flot/jquery.flot.time.min.js",
+        "assets/plugins/flot/jquery.flot.symbol.min.js",
+        "assets/plugins/flot/jquery.flot.resize.min.js",
+        "assets/plugins/flot/jquery.flot.tooltip.min.js",
+        "assets/plugins/curvedlines/curvedLines.js",
+        "assets/plugins/metrojs/MetroJs.min.js",
+        "assets/js/modern.js",
+        "assets/plugins/summernote-master/summernote.min.js",
+        "../node_modules/chart.js/dist/Chart.bundle.js",
+        "../node_modules/c3/c3.min.js"
+      ],
+      "environmentSource": "environments/environment.ts",
+      "environments": {
+        "dev": "environments/environment.ts",
+        "prod": "environments/environment.prod.ts"
+      }
+    }
+  ],
+  "e2e": {
+    "protractor": {
+      "config": "./protractor.conf.js"
+    }
+  },
+  "lint": [
+    {
+      "files": "src/**/*.ts",
+      "project": "src/tsconfig.json"
+    },
+    {
+      "files": "e2e/**/*.ts",
+      "project": "e2e/tsconfig.json"
+    }
+  ],
+  "test": {
+    "karma": {
+      "config": "./karma.conf.js"
+    }
+  },
+  "defaults": {
+    "styleExt": "css",
+    "prefixInterfaces": false,
+    "inline": {
+      "style": false,
+      "template": false
+    },
+    "spec": {
+      "class": false,
+      "component": true,
+      "directive": true,
+      "module": false,
+      "pipe": true,
+      "service": true
+    }
+  }
+}

@@ -1,0 +1,22 @@
+.getting-started-videos {
+
+}
+.getting-started-videos h1 {
+	line-height: 1.7em;
+	margin: 1.5em 0 1em;
+}
+.getting-started-videos .video-frame {
+	max-width: 100%;
+	position: relative;
+	margin-bottom: 1em;
+}
+.getting-started-videos .video-frame .video-frame-inner {
+	padding-bottom: 56.25%;
+}
+.getting-started-videos .video-frame iframe {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+}

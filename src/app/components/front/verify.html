@@ -1,0 +1,16 @@
+<section class="grey_bg">
+	<div class="container">
+		<div class="login">
+			<h3>Verify Your Email</h3>
+			<div class="login-in">
+        <div class="error-msg" *ngIf="isError">{{errorMsg}}</div>
+				<form (ngSubmit)="onVerify(f)" #f="ngForm">
+					<fieldset>
+						<input type="email" name="email" ngModel class="form-control" placeholder="Email" required>
+						<button type="submit">Get Verify Link</button>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+	</div>
+</section>

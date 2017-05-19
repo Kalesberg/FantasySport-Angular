@@ -1,0 +1,120 @@
+<div class="page-inner">
+  <div class="page-title">
+    <div class="container">
+      <h3>Dashboard</h3>
+    </div>
+  </div>
+  <div id="main-wrapper" class="container">
+    <div class="filter-group">
+      <div class="filter-container dropdown">
+        <a class="dropdown-toggle btn btn-primary btn-sm" data-toggle="dropdown">
+          Filter by {{filterType}}
+          <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li (click)="filterTimePeriodChanged('week')"><a>By week</a></li>
+          <li (click)="filterTimePeriodChanged('month')"><a>By Month</a></li>
+          <li (click)="filterTimePeriodChanged('year')"><a>By Year</a></li>
+        </ul>
+      </div>
+      <div class="filter-container">
+        <a (click)="onBtnPreviousClicked()"
+           class="filter-btns previous-btn btn btn-primary btn-sm"
+           [mdTooltip]="'Previous ' + filterType"
+           mdTooltipPosition="below">
+          <i class="fa fa-angle-double-left" aria-hidden="true"></i> Previous
+        </a>
+        <p-calendar [monthNavigator]="true"
+                    [yearNavigator]="true"
+                    [inputStyle]="{'border-radius':'0','background':'#444','color':'#ffc107','border':'none','width':'210px','font-size':'14px','text-align':'center','padding-top':'6px'}"
+                    [(ngModel)]=" selectedDate"
+                    [maxDate]="maxDate"
+                    [readonlyInput]="true"
+                    mdTooltip="select date"
+                    mdTooltipPosition="below"
+                    yearRange="1990:2025"
+                    [dateFormat]="dateLable"
+                    class="filter-btns date-btn btn-primary"
+                    (onSelect)="onDateChanged()">
+        </p-calendar>
+        <a (click)="onBtnNextClicked()"
+           class="filter-btns next-btn btn btn-primary btn-sm"
+           [mdTooltip]="'Next ' + filterType"
+           [class.disabled]="isTodayDate()"
+           mdTooltipPosition="below">Next <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+        </a>
+        <a (click)="onBtnTodayClicked()"
+           class="filter-btns today-btn btn btn-primary btn-sm"
+           [class.disabled]="isTodayDate()"
+           mdTooltipPosition="below">Today
+        </a>
+      </div>
+      <div class="filter-container">
+        <div class="dropdown">
+          <a class="dropdown-toggle btn btn-primary btn-sm" data-toggle="dropdown">
+            {{siteType ? siteType : 'Site'}} <span class=" caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li (click)="siteType = 'DraftKings';updateDashboard()"><a>DraftKings</a></li>
+            <li *ngIf="siteType" class="divider"></li>
+            <li *ngIf="siteType" (click)="siteType = null;updateDashboard()"><a>clear <i class="fa fa-times"
+                                                                                         aria-hidden="true"></i></a>
+            </li>
+          </ul>
+        </div>
+        <div class="dropdown">
+          <a class="dropdown-toggle btn btn-primary btn-sm" data-toggle="dropdown">
+            {{sportType ? sportType : 'Sport' }} <span class=" caret"></span></a>
+          <ul class="dropdown-menu">
+            <li (click)="sportType = 'Golf';updateDashboard()"><a>Golf</a></li>
+            <li (click)="sportType = 'NBA';updateDashboard()"><a>NBA</a></li>
+            <li (click)="sportType = 'NFL';updateDashboard()"><a>NFL</a></li>
+            <li (click)="sportType = 'NHL';updateDashboard()"><a>NHL</a></li>
+            <li (click)="sportType = 'Soccer';updateDashboard()"><a>Soccer</a></li>
+            <li *ngIf="sportType" class="divider"></li>
+            <li *ngIf="sportType" (click)="sportType = null;updateDashboard()"><a>clear <i class="fa fa-times"
+                                                                                           aria-hidden="true"></i></a>
+            </li>
+          </ul>
+        </div>
+        <div class="dropdown">
+          <a class="dropdown-toggle btn btn-primary btn-sm" data-toggle="dropdown">
+            {{category ? category.label : 'Category' }} <span class=" caret"></span></a>
+          <ul class="dropdown-menu">
+            <li *ngFor="let currCategory of categoryTypes" (click)="category = currCategory;updateDashboard()"><a>{{currCategory.label}}</a>
+            </li>
+            <li *ngIf="category" class="divider"></li>
+            <li *ngIf="category" (click)="category = null;updateDashboard()"><a>clear <i class="fa fa-times"
+                                                                                         aria-hidden="true"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <dfs-dashboard-statics [dashoardFilter]="dashboardFilter"></dfs-dashboard-statics>
+    <!-- Row -->
+    <div class="row">
+      <div class="col-lg-7 col-md-12">
+        <div class="row">
+          <div class="col-sm-12 graph-container">
+            <md-card>
+              <md-card-title>Cumulative Profit by Day of the {{filterType}}</md-card-title>
+              <md-card-content>
+                <div #lineChart>
+                </div>
+              </md-card-content>
+            </md-card>
+          </div>
+          <!--<div class="col-sm-4">
+            <dfs-dashboard-top-wins [dashoardFilter]="dashboardFilter"></dfs-dashboard-top-wins>
+          </div>-->
+        </div>
+      </div>
+      <div class="col-lg-5 col-md-12">
+        <dfs-dashboard-top-wins [dashoardFilter]="dashboardFilter"></dfs-dashboard-top-wins><!--Top Wins-->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Main Wrapper -->

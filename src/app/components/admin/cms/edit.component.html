@@ -1,0 +1,40 @@
+<div class="page-inner">
+	<div class="page-title">
+		<h3>Edit Page</h3>
+	</div>
+	<div id="main-wrapper">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="panel panel-white">
+					<div class="panel-heading clearfix">
+						<h4 class="panel-title">Edit Page</h4>
+					</div>
+					<div class="panel-body">
+						<form (ngSubmit) ="onCmsEdit(f)" #f="ngForm" class="form-horizontal">
+							<div class="form-group">
+								<label for="input-Default" class="col-sm-2 control-label">Title</label>
+								<div class="col-sm-10">
+									<input type="text" name="title" [(ngModel)]="model.title" class="form-control" id="title" (keypress)="addSlug()"  #title="ngModel" required>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="input-Default" class="col-sm-2 control-label">Slug</label>
+								<div class="col-sm-10">
+									<input type="text" name="slug" [(ngModel)]="model.slug" class="form-control" id="input-Default" #slug="ngModel" required>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-2 control-label">Content</label>		
+								<div class="col-sm-10">
+									<textarea class="summernotee">{{content}}</textarea>
+								</div>								
+							</div>
+							<input type="hidden" name="id" [(ngModel)]="model.id">
+							<button type="submit" class="btn btn-primary">Edit</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div><!-- Row -->
+	</div><!-- Main Wrapper -->
+</div><!-- Page Inner -->

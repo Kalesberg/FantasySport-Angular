@@ -1,0 +1,56 @@
+.error-msg{
+  color: #ff0000;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/** login page **/
+
+.login {
+  background-color: #ffffff;
+  margin: 50px auto;
+  max-width: 654px;
+  padding-bottom: 50px;
+  padding-top: 50px;
+  text-align: left;
+  width: 100%;
+}
+
+.login h3 {
+  color: #fbba41;
+  font-size: 25px;
+  margin-bottom: 30px;
+  text-align:center;
+}
+
+.login-in {
+  margin: 0 auto;
+  max-width: 300px;
+  width: 100%;
+}
+
+.login-in input {
+  border: 1px solid #9b9b9b;
+  height: 33px;
+  margin-bottom: 20px;
+  padding: 0 10px;
+  width: 100%;
+}
+
+.login-in small {
+    color: red;
+}
+
+.login-in button {
+  background-color: #fbba41;
+  border: 1px solid #fbba41;
+  color: #ffffff;
+  font-size: 18px;
+  height: 33px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.login-in span {
+  font-size: 12px;
+}

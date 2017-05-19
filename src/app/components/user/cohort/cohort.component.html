@@ -1,0 +1,29 @@
+<section class="grey_bg">
+  <div class="container">
+    <div class="cohort-loader" *ngIf="isLoading">
+      <md-progress-spinner mode="indeterminate" color="accent" style="width: 50px;height: 50px"></md-progress-spinner>
+    </div>
+    <div class="results">
+      <div class="row">
+        <div class="col-sm-3">
+          <dfs-applied-filters *ngIf="filters && filters.length"
+                               [filters]="filters"
+                               [filterSettings]="filterSettings"
+                               (removeFilterEvent)="onRemoveFilterEvent($event)"
+                               (remoceAllFiltersEvent)="onRemoveAllFiltersEvent($event)"
+                               style="display:block;margin-bottom: 15px"></dfs-applied-filters>
+          <app-search [filterSettings]="filterSettings"
+                      (addFilterEvent)="onAddFilterEventHandler($event)"></app-search>
+        </div>
+        <div class="col-sm-9">
+          <dfs-tab-view [tabs]="cohortTabs"
+                        [activeTab]="activeTab"
+                        (tabChanged)="onCohortTabChanged($event)"></dfs-tab-view>
+          <dfs-cohort-list [records]="records"></dfs-cohort-list>
+          <!-- contests-->
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

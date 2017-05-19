@@ -1,0 +1,40 @@
+<md-card>
+  <md-card-content>
+    <div class="cohort-data-container">
+      <p-dataTable [value]="records"
+                   [rows]="20"
+                   [paginator]="(records && records.length > 10)"
+                   [pageLinks]="5"
+                   [rowsPerPageOptions]="[10,20]">
+        <p-column field="date" header="Date">
+          <ng-template let-record="rowData" pTemplate="body">
+            <label>{{getContestDate(record['date'])}}</label>
+          </ng-template>
+        </p-column>
+        <p-column header="" columnResizeMode="expand"
+                  [style]="{'width':'300px','text-align':'left','text-overflow':'ellipsis'}">
+          <ng-template let-record="rowData" pTemplate="body">
+            <label style="width: 100%;text-align:left;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">{{record['title']}}</label>
+          </ng-template>
+        </p-column>
+        <p-column field="prize_pool" header="PP" md-tooltip="prize_pool"></p-column>
+        <p-column header="Entry Details">
+          <ng-template let-record="rowData" pTemplate="body">
+            <label>{{record['total_entries']}}</label>
+          </ng-template>
+        </p-column>
+        <p-column field="fee" header="Fee">
+          <ng-template let-record="rowData" pTemplate="body">
+            <label>${{record['fee']}}</label>
+          </ng-template>
+        </p-column>
+        <p-column field="profit" header="Profit($)">
+          <ng-template let-record="rowData" pTemplate="body">
+            <label *ngIf="record['net'] >= 0" [ngStyle]="{color: '#4caf50'}">${{record['net'] | number}} </label>
+            <label *ngIf="record['net'] <  0" [ngStyle]="{color: 'red'}">(${{record['net'] * -1 | number}})</label>
+          </ng-template>
+        </p-column>
+      </p-dataTable>
+    </div>
+  </md-card-content>
+</md-card>

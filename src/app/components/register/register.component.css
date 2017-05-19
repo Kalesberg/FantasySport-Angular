@@ -1,0 +1,56 @@
+/** login page **/
+
+.register {
+  background-color: #ffffff;
+  margin: 50px auto;
+  max-width: 654px;
+  padding-bottom: 50px;
+  padding-top: 50px;
+  text-align: center;
+  width: 100%;
+}
+
+.register h3 {
+  color: #fbba41;
+  font-size: 25px;
+  margin-bottom: 30px;
+}
+
+.register-in {
+  margin: 0 auto;
+  max-width: 300px;
+  width: 100%;
+}
+
+.register-in input {
+  border: 1px solid #9b9b9b;
+  height: 33px;
+  margin-bottom: 20px;
+  padding: 0 10px;
+  width: 100%;
+}
+
+.register-in select {
+  border: 1px solid #9b9b9b;
+  height: 33px;
+  margin-bottom: 20px;
+  padding: 0 10px;
+  width: 100%;
+}
+
+.register-in button {
+  background-color: #fbba41;
+  border: 1px solid #fbba41;
+  color: #ffffff;
+  font-size: 18px;
+  height: 33px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.register-in span {
+  font-size: 12px;
+}
+
+
+/** sign_in page end **/

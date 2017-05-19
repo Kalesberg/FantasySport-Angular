@@ -1,0 +1,40 @@
+/* Write your custom CSS here */
+
+.member_pag .pagination > .active > a {
+  background: #e91e63 none repeat scroll 0 0 !important;
+  border: 1px solid #e91e63 !important;
+}
+
+.table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th, .table td {
+  padding-right: 15px !important;
+}
+
+.member-icon > a {
+  color: #22baa0;
+}
+
+.member-icon .fa.fa-envelope {
+  font-size: 15px;
+}
+
+.member-icon .fa.fa-unlock {
+  font-size: 22px;
+}
+
+body .ui-datatable .ui-paginator {
+  padding: 5px !important;
+  text-align: center !important;
+}
+
+body .ui-paginator .ui-paginator-first, body .ui-paginator .ui-paginator-prev, body .ui-paginator .ui-paginator-next, body .ui-paginator .ui-paginator-last {
+  color: #000 !important;
+}
+
+.ui-paginator-page.ui-state-active {
+  background-color: #000 !important;
+  color: #ffc107 !important;
+}
+
+.ui-paginator-page {
+  color: #000 !important;
+}

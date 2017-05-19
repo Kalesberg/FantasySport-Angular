@@ -1,0 +1,32 @@
+<md-card>
+  <md-card-content>
+    <div class="opponent-data-container">
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+          <tr>
+            <th class="col-sm-4 table-header">Name</th>
+            <th class="col-sm-1 table-header">Played</th>
+            <th class="col-sm-1 table-header">Won #</th>
+            <th class="col-sm-1 table-header">Win %</th>
+            <th class="col-sm-2 table-header">Av buyin</th>
+            <th class="col-sm-1 table-header">Net</th>
+            <th class="col-sm-2 table-header">Last game</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let data of records">
+            <td class="col-sm-4">{{data._id}}</td>
+            <td class="col-sm-1">{{data.entries}}</td>
+            <td class="col-sm-1">{{data.total_win_count}}</td>
+            <td class="col-sm-1">{{data.win_percentage.toFixed(2)}}</td>
+            <td class="col-sm-2">{{data.fee}}</td>
+            <td class="col-sm-1" [ngStyle]="{color: (data.net > 0)? '#4caf50' : '#ff0000'}">{{data.net}}</td>
+            <td class="col-sm-2">{{data.date | date:'dd MMM yy'}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </md-card-content>
+</md-card>

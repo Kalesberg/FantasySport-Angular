@@ -1,0 +1,22 @@
+<simple-notifications></simple-notifications>
+<div class="overlay"></div>
+<main class="page-content content-wrap">
+  <app-front-header *ngIf="!user && !admin"></app-front-header>
+  <div *ngIf="user">
+    <app-usertopbar (checkUser)="checkUser($event)"></app-usertopbar>
+  </div>
+  <div *ngIf="admin">
+    <topbar checkAdmin="checkAdmin($event)"></topbar>
+    <left-sidebar></left-sidebar>
+  </div>
+  <div class="page-inner">
+    <router-outlet></router-outlet>
+  </div>
+  <app-front-footer></app-front-footer>
+</main>
+
+<!-- app-front-header *ngIf="front"></app-front-header-->
+<!--div *ngIf="front">
+  <router-outlet></router-outlet>
+  </div-->
+<!--app-front-footer *ngIf="front"></app-front-footer-->

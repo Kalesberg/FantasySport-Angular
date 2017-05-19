@@ -1,0 +1,72 @@
+.upload-history {
+  display: flex;
+  justify-content: space-between;
+  height: 100px;
+}
+
+.history-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.field-title {
+  font-weight: bold;
+}
+
+.field-data {
+
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.action-btn {
+  display: inline-block !important;
+  position: relative !important;
+  padding: 2px !important;
+  margin-right: .1em !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+  text-align: center !important;
+  zoom: 1 !important;
+  overflow: visible !important;
+  width: auto !important;
+  border-radius: 3px !important;
+}
+
+
+.downloadModal .modal-body {
+  padding: 2em;
+}
+.downloadModal .modal-body .row {
+  margin: 1em 0;
+}
+
+.upload-browse{
+  margin-bottom: 20px;
+  height: 150px;
+}
+
+.upload-browse md-card{
+  height: 100%;
+  width:100%;
+}
+
+.file-drop-zone{
+  position: absolute !important;
+  top: 20px;
+  left: 20px;
+  bottom: 20px;
+  right: 20px;
+  margin: 0;
+  padding: 0 !important;
+  min-height: initial;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+.file-drop-zone > div{
+  flex: 1;
+}

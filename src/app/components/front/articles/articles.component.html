@@ -1,0 +1,204 @@
+<section>
+	<div class="article_preview grey_bg">
+	  <div class="container">
+		<div class="row">
+		  <div class="col-sm-9 padding-l">
+			  <div class="ap_1">
+				<div class="row">
+				  <div class="col-sm-6">
+					<img src="assets/images/article_1.jpg">
+				  </div>	
+				  <div class="col-sm-6">
+					<div class="ap_1_h">
+						<h4>Today’s Hot Topics!</h4>
+						<div class="ap_1_h_c">
+							<h5>DFS Basketball Happy Thursday!  Mini 5 Game Slate</h5>
+							<p>Tyronn Lue said in a post game press conference last night that he will rest the big 3.</p>
+						</div>
+						
+						<div class="ap_1_h_c">
+							<h5>The Single Bullet</h5>
+							<p>Joe reflects on yesterday's bullet that featured 3 of Tuesday's "Under the Radar" plays.</p>
+						</div>
+						
+						<div class="ap_1_h_c">
+							<h5>Money on the Table</h5>
+							<p>There were a lot of question marks surrounding the status of Clippers players as we headed into lock last night.</p>
+						</div>
+					</div>
+				  </div>	
+				</div>
+			  </div><!--ap_1-->	
+			  
+			  <div class="ap_gallery">
+				<h5><span>Gallery</span></h5>
+				<div>
+					<div class="gall">
+						<img src="assets/images/a_p_g_1.jpg">
+					</div>
+					<div class="gall">
+						<img src="assets/images/a_p_g_1.jpg">
+					</div>
+					<div class="gall">
+						<img src="assets/images/a_p_g_1.jpg">
+					</div>
+					<div class="gall">
+						<img src="assets/images/a_p_g_1.jpg">
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			  </div><!--ap_gallery-->
+
+			  <div class="row">
+			  <div *ngFor="let category of categories;">
+					<div class="col-sm-6" *ngIf="hasPosts(category.id)" id="cat-{{category.id}}" >
+						<div class="f_category">
+							<h4>{{category.name}}</h4>
+							<div class="f_category_c" *ngFor="let post of findPosts(category.id);">
+								<img alt="Media Placeholder" src="{{findMedia(post.featured_media)}}">
+								<div class="f_category_content">
+									<h5>{{post.title.rendered}}</h5>
+									<!-- <p>{{post.excerpt.rendered}}</p> -->
+									<button class="btn btn_read">Read More</button>
+								</div>							
+								<div class="clearfix"></div>
+							</div>	
+							<div class="c_line"></div>
+							
+						</div><!--f_category-->
+						
+					</div><!--col-sm-6-->
+				</div>
+			  </div>
+			  
+		  </div><!--col-sm-9-->
+		  
+		  <div class="col-sm-3 padding-r">
+		  
+				<div class="f_art" data-example-id="togglable-tabs">
+					<ul class="nav nav-tabs" id="myTabs" role="tablist">
+						<li role="presentation" class="active"><a href="#featured" id="featured-tab" role="tab" data-toggle="tab" aria-controls="featured" aria-expanded="true">Featured</a></li>
+						
+						<li role="presentation" class=""><a href="#toparticles" role="tab" id="toparticles-tab" data-toggle="tab" aria-controls="toparticles" aria-expanded="false">Top-Articles</a></li>
+						
+						<li role="presentation" class=""><a href="#recent" role="tab" id="recent-tab" data-toggle="tab" aria-controls="toparticles" aria-expanded="false">Recent</a></li>
+						
+						<li role="presentation" class=""><a href="#newest" role="tab" id="newest-tab" data-toggle="tab" aria-controls="newest" aria-expanded="false">Newest</a></li>
+						
+					</ul>
+					<div class="tab-content art-tab-content" id="myTabContent">
+						<div class="tab-pane fade active in" role="tabpanel" id="featured" aria-labelledby="featured-tab"> 
+							<div class="tab_category_c">
+							<img src="assets/images/category.jpg">
+							<div class="tab_category_content">
+								<h5>NHL Grind Down</h5>
+								<p>Set your lineups for today's NHL action with the statistics of the Grind Down.</p>
+								<button class="btn btn_read1">Read More</button>
+							</div>
+							<div class="clearfix"></div>
+							</div>
+							
+							<div class="tabc_line"></div>
+							
+							<div class="tab_category_c">
+							<img src="assets/images/category.jpg">
+							<div class="tab_category_content">
+								<h5>NHL Grind Down</h5>
+								<p>Set your lineups for today's NHL action with the statistics of the Grind Down.</p>
+								<button class="btn btn_read1">Read More</button>
+							</div>
+							<div class="clearfix"></div>
+							</div>
+
+						</div>	<!--tab1-->
+						
+						<div class="tab-pane fade" role="tabpanel" id="toparticles" aria-labelledby="toparticles-tab">
+							<div class="tab_category_c">
+							<img src="assets/images/category.jpg">
+							<div class="tab_category_content">
+								<h5>NHL Grind Down</h5>
+								<p>Set your lineups for today's NHL action with the statistics of the Grind Down.</p>
+								<button class="btn btn_read1">Read More</button>
+							</div>
+							<div class="clearfix"></div>
+							</div>
+							
+							<div class="tabc_line"></div>
+							
+							<div class="tab_category_c">
+							<img src="assets/images/category.jpg">
+							<div class="tab_category_content">
+								<h5>NHL Grind Down</h5>
+								<p>Set your lineups for today's NHL action with the statistics of the Grind Down.</p>
+								<button class="btn btn_read1">Read More</button>
+							</div>
+							<div class="clearfix"></div>
+							</div>
+						</div><!--tab2-->
+						
+						<div class="tab-pane fade" role="tabpanel" id="recent" aria-labelledby="recent-tab">
+						<div class="tab_category_c">
+							<img src="assets/images/category.jpg">
+							<div class="tab_category_content">
+								<h5>NHL Grind Down</h5>
+								<p>Set your lineups for today's NHL action with the statistics of the Grind Down.</p>
+								<button class="btn btn_read1">Read More</button>
+							</div>
+							<div class="clearfix"></div>
+							</div>
+							
+							<div class="tabc_line"></div>
+							
+							<div class="tab_category_c">
+							<img src="assets/images/category.jpg">
+							<div class="tab_category_content">
+								<h5>NHL Grind Down</h5>
+								<p>Set your lineups for today's NHL action with the statistics of the Grind Down.</p>
+								<button class="btn btn_read1">Read More</button>
+							</div>
+							<div class="clearfix"></div>
+							</div>
+						</div>
+						
+						<div class="tab-pane fade" role="tabpanel" id="newest" aria-labelledby="newest-tab"> 
+							<div class="tab_category_c">
+							<img src="assets/images/category.jpg">
+							<div class="tab_category_content">
+								<h5>NHL Grind Down</h5>
+								<p>Set your lineups for today's NHL action with the statistics of the Grind Down.</p>
+								<button class="btn btn_read1">Read More</button>
+							</div>
+							<div class="clearfix"></div>
+							</div>
+							
+							<div class="tabc_line"></div>
+							
+							<div class="tab_category_c">
+							<img src="assets/images/category.jpg">
+							<div class="tab_category_content">
+								<h5>NHL Grind Down</h5>
+								<p>Set your lineups for today's NHL action with the statistics of the Grind Down.</p>
+								<button class="btn btn_read1">Read More</button>
+							</div>
+							<div class="clearfix"></div>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+		  
+		  
+				<div class="a_week">
+					<h5>Article of the Week</h5>
+					<img src="assets/images/category.jpg">
+					<h6>Fading the Chalk</h6>
+					<p>My wife had to work an event last night, so I was home alone with all the time in the world to fine tune my lineup and get ready for a big night of hoops. Of course, as is always the case on a night where
+I have plenty of free time, there wasn't a lot of late news.</p>
+				<button class="btn btn_read_a-w">Read More</button>
+				</div><!--a_week-->
+		  </div><!--col-sm-3-->
+		  
+		</div><!--row-->
+	  </div><!--container-->
+	</div>
+</section>

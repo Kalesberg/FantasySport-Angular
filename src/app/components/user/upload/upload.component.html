@@ -1,0 +1,135 @@
+<section class="grey_bg">
+  <div class="container">
+    <div class="results">
+      <div class="row">
+        <div></div>
+        <div class="col-sm-3">
+          <div class="contest_h">
+            <h3>UPLOAD FILES</h3>
+            <p>Select files from your computer</p>
+          </div>
+          <div class="upload-browse">
+            <md-card>
+              <md-card-content>
+                <dropzone [config]="configUpload" class="file-drop-zone" [message]="'Drop file here'"
+                          (error)="onUploadError($event)"
+                          (success)="onUploadSuccess($event)" (sending)="onSending($event)"></dropzone>
+              </md-card-content>
+            </md-card>
+          </div>
+          <md-card>
+            <md-card-content>
+              <div class="upload_info">
+                <ul>
+                  <li><a href="#"><img src="assets/images/fanduel.png">&nbsp;How do I get my results data from
+                    FanDuel?</a>
+                  </li>
+                  <li><a href="#"><img src="assets/images/draftking.jpg">&nbsp;How do I get my results data from
+                    DraftKings?</a>
+                  </li>
+                  <li><a href="#"><img src="assets/images/yahoo.png">&nbsp;How do I get my results data from Yahoo?</a>
+                  </li>
+                  <li><a href="#"><img src="assets/images/drafday.png">&nbsp;How do I get my results data from
+                    DraftDay?</a>
+                  </li>
+                </ul>
+              </div>
+            </md-card-content>
+          </md-card>
+
+        </div>
+        <div class="col-sm-9">
+          <div class="contest_h">
+            <h3>CONTEST ENTRY FILES</h3>
+            <p>Below are your contest entry files you have uploaded. New files join a queue and will be processed
+              shortly.</p>
+          </div>
+          <md-card>
+            <md-card-content>
+              <div class="table-responsive project-stats">
+                <table class="table">
+                  <thead>
+                  <tr>
+                    <th class="">File name</th>
+                    <th class="per25">Uploaded on</th>
+                    <th class="per25"></th>
+
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr *ngFor="let upload of uploads" (click)="onTableRowClicked(upload)">
+
+                    <td>
+                      <img *ngIf="upload.website == 'draftkings'" src="assets/images/draftking.jpg">
+                      <img *ngIf="upload.website == 'fanduel'" src="assets/images/fanduel.png">
+                      &nbsp;
+
+                      {{upload.original_name}}
+                    </td>
+                    <td>{{upload.created_at | date:'dd-MM-yyyy h:m a'}}</td>
+                    <td>{{upload.imported}}</td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </md-card-content>
+          </md-card><!-- contests-->
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<template #deleteTemplateRef let-deleteDialog="dialogRef">
+  <div class="deleteModal">
+    <div class="modal-header">
+      <button type="button" class="close" (click)="deleteDialog.close(true)"><span aria-hidden="true">&times;</span>
+      </button>
+      <h1 class="modal-title" id="myModalLabel">Are you sure?</h1>
+    </div>
+    <div class="modal-body">
+      <p>Deleting an entity history file will remove all associated results imported from this file.</p>
+      <p>Are you sure you want to delete <strong>{{ selectedHistory.original_name }}</strong>?</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-danger" (click)="confirmDeleteClicked(deleteDialog);"><span
+        class="glyphicon glyphicon-trash" area-hidden="true"></span> Confirm Delete
+      </button>
+      <button type="button" class="btn btn-default" (click)="deleteDialog.close(true)">Close</button>
+    </div>
+  </div>
+</template>
+
+<template #downloadTemplateRef let-downloadDialog="dialogRef">
+  <div class="downloadModal">
+    <div class="modal-header">
+      <button type="button" class="close" (click)="downloadDialog.close(true)"><span aria-hidden="true">&times;</span>
+      </button>
+      <h1 class="modal-title" id="myModalLabel">{{ selectedHistory.original_name }}</h1>
+    </div>
+    <div class="modal-body">
+      <div class="row">
+        <div class="col-xs-4">File Size</div>
+        <div class="col-xs-8">{{ getFileSize(selectedHistory.size) }} KB</div>
+      </div>
+      <div class="row">
+        <div class="col-xs-4">Uploaded On</div>
+        <div class="col-xs-8">{{ selectedHistory.created_at | date: 'dd MMM yyyy h:m a' }}</div>
+      </div>
+      <div class="row">
+        <div class="col-xs-4">Records Created</div>
+        <div class="col-xs-8">{{ selectedHistory.imported | number }}</div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-primary" (click)="downloadClick();"><span
+        class="glyphicon glyphicon-download-alt" area-hidden="true"></span> Download
+      </button>
+      <button type="button" class="btn btn-danger" (click)="deleteHistoryClicked(downloadDialog);"><span
+        class="glyphicon glyphicon-trash" area-hidden="true"></span> Delete File
+      </button>
+      <button type="button" class="btn btn-default" (click)="downloadDialog.close(true)">Close</button>
+    </div>
+  </div>
+</template>

@@ -1,0 +1,22 @@
+<section class="grey_bg">
+  <div class="container">
+    <div class="register">
+      <h3>Please sign up or log in first</h3>
+      <div class="register-in">
+        <form (ngSubmit)="onRegister(f)" #f="ngForm">
+          <fieldset>
+            <input type="text" placeholder="First Name" name="first_name" ngModel>
+            <input type="text" placeholder="Last Name" name="last_name" ngModel>
+            <input type="email" placeholder="Email" name="email" ngModel>
+            <input type="password" placeholder="Password" name="password" ngModel>
+            <button type="submit" [disabled]="!f.form.valid">Create my account</button>
+            <span>
+				<a [routerLink] = "['/login']">Already have an account? Log in</a> 
+				
+			</span>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

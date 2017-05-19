@@ -1,0 +1,28 @@
+<md-card>
+  <md-card-content>
+    <div class="overview-data-container">
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+          <tr>
+            <th class="col-sm-4"></th>
+            <th class="col-sm-2">Lifetime</th>
+            <th class="col-sm-2">This Year</th>
+            <th class="col-sm-2">This Month</th>
+            <th class="col-sm-2">This Week</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let data of overviewData">
+            <td class="col-sm-4">{{data.title}}</td>
+            <td class="col-sm-2" [ngStyle]="getDataStyle(data,'Lifetime')">{{getDisplayValue(data,'Lifetime')}}</td>
+            <td class="col-sm-2" [ngStyle]="getDataStyle(data,'This Year')">{{getDisplayValue(data,'This Year')}}</td>
+            <td class="col-sm-2" [ngStyle]="getDataStyle(data,'This Month')">{{getDisplayValue(data,'This Month')}}</td>
+            <td class="col-sm-2" [ngStyle]="getDataStyle(data,'This Week')">{{getDisplayValue(data,'This Week')}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </md-card-content>
+</md-card>

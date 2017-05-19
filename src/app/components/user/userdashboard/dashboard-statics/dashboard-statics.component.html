@@ -1,0 +1,68 @@
+<div class="row error-container" *ngIf="errorMsg && !isLoading">
+  {{errorMsg}}
+</div>
+<div class="loader-container" *ngIf="isLoading">
+  <md-progress-spinner mode="indeterminate" style="width: 28px;height: 28px"></md-progress-spinner>
+</div>
+<div class="row statics-info-row" [@enterAnimation]="!isLoading" *ngIf="!isLoading && !errorMsg">
+  <div class="col-lg-3 col-md-6">
+    <md-card class="statics-card entaries-card">
+      <md-card-content class="static-data-container">
+        <div class="statics-data-info">
+          <p class="data-count">{{(contestData?.entries ? contestData.entries : '0') | number}}</p>
+          <span class="data-title">Entries</span>
+        </div>
+        <div>
+          <md-icon class="statics-data-icon">people_outline</md-icon>
+        </div>
+      </md-card-content>
+    </md-card>
+  </div>
+  <div class="col-lg-3 col-md-6">
+    <md-card class="statics-card fee-card">
+      <md-card-content class="static-data-container">
+        <div class="statics-data-info">
+          <p class="data-count">{{(contestData?.fees ? (contestData.fees | number) : '-' )}}</p>
+          <span class="data-title">Fees Paid</span>
+        </div>
+        <div>
+          <md-icon class="statics-data-icon">attach_money</md-icon>
+        </div>
+      </md-card-content>
+    </md-card>
+  </div>
+  <div class="col-lg-3 col-md-6">
+    <md-card class="statics-card"
+             *ngIf="contestData"
+    [class.profit-card]="contestData.net >= 0 || !contestData.net"
+    [class.profit-card-red]="contestData.net < 0">
+      <md-card-content class="static-data-container">
+        <div class="statics-data-info">
+          <p class="data-count" *ngIf="contestData.net >= 0 || !contestData.net">{{(contestData?.net? '$' + ( contestData.net | number): '-' )}}</p>
+          <p class="data-count" *ngIf="contestData.net < 0">{{(contestData?.net? '$' + ( (contestData.net * -1) | number): '-' )}}</p>
+          <span class="data-title">{{(contestData.net >= 0 || !contestData.net)?'Profit':'Loss'}}</span>
+        </div>
+        <div>
+          <md-icon class="statics-data-icon">{{(contestData.net >= 0 || !contestData.net)?'add':'remove'}}</md-icon>
+        </div>
+      </md-card-content>
+    </md-card>
+  </div>
+  <div class="col-lg-3 col-md-6">
+    <md-card class="statics-card"
+             *ngIf="contestData"
+             [class.roi-card]="contestData.roi >= 0 || !contestData.roi"
+             [class.roi-card-red]="contestData.roi < 0">
+      <md-card-content class="static-data-container">
+        <div class="statics-data-info">
+          <p class="data-count" *ngIf="contestData.roi >= 0 || !contestData.roi">{{(contestData?.roi? '$' + ( contestData.roi | number): '-' )}}</p>
+          <p class="data-count" *ngIf="contestData.roi < 0">{{(contestData?.roi? '- $' + ( (contestData.roi * -1) | number): '-' )}}</p>
+          <span class="data-title">ROI</span>
+        </div>
+        <div>
+          <md-icon class="statics-data-icon">{{(contestData.roi >= 0 || !contestData.roi)?'add':'remove'}}</md-icon>
+        </div>
+      </md-card-content>
+    </md-card>
+  </div>
+</div>

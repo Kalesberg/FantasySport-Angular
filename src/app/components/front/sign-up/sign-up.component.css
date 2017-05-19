@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+.main-content{
+  margin-top: 50px;
+}
+
+.plan-price-card{
+  margin: 20px auto;
+}
+
+.plan-validity{
+  font-size: 18px;
+}
+
+.plan-validity-sub-title{
+  margin-top: 20px;
+}
+/*SWAPN8689QR*/
+.plan-price{
+  margin-top: 30px;
+}
+
+.plan-price-unit{
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+.plan-apply-btn{
+  margin-top: 30px;
+}
+
+.price-terms{
+  margin-top: 20px;
+}
+
+.reactive-membership{
+  margin-top: 20px;
+}
+
+.dfs-testimonial-container{
+  font-size: 18px;
+  margin-top: 30px;
+}
+
+.dfs-testimonial-point{
+  color: #cccccc;
+}
+
+.dfs-testimonial{
+  font-style: italic;
+}
+
+.dfs-testimonial-owner{
+  margin-top: 20px;
+  color: #cccccc;
+}

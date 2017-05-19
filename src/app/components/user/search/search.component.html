@@ -1,0 +1,345 @@
+<div class="filter-header">
+  Add Filters
+</div>
+<form [formGroup]="filterForm">
+  <div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+            General
+          </a>
+        </h4>
+      </div>
+      <div id="collapse1" class="panel-collapse collapse">
+        <div class="panel-body">
+          <!--title-->
+          <div class="filter-container">
+            <div class="filter-title">
+              Contest title search
+            </div>
+            <div class="filter-control-container">
+              <input type="text" class="filter-control" [formControlName]="filterKeyConstants.TITLE">
+              <button class="filter-add-btn" (click)="addFilter(filterKeyConstants.TITLE)">ADD</button>
+            </div>
+          </div>
+          <!--Site-->
+          <div class="filter-container">
+            <div class="filter-title">
+              Site
+            </div>
+            <div class="filter-control-container">
+              <select class="filter-control" [formControlName]="filterKeyConstants.SITE">
+                <option value="-" [disabled]="true" [disabled]="true" [selected]="true">Select site</option>
+                <option *ngFor="let site of sitesData"
+                        [value]="site.value">
+                  {{site.label}}
+                </option>
+              </select>
+              <button class="filter-add-btn" (click)="addFilter(filterKeyConstants.SITE)">ADD</button>
+            </div>
+          </div>
+          <!--Sport-->
+          <div class="filter-container">
+            <div class="filter-title">
+              Sport
+            </div>
+            <div class="filter-control-container">
+              <select class="filter-control" [formControlName]="filterKeyConstants.SPORT">
+                <option value="-" [disabled]="true" [attr.selected]="true">Select sport</option>
+                <option *ngFor="let sport of sportData"
+                        [value]="sport.value">
+                  {{sport.label}}
+                </option>
+              </select>
+              <button class="filter-add-btn" (click)="addFilter(filterKeyConstants.SPORT)">ADD</button>
+            </div>
+          </div>
+          <!--season-->
+          <div class="filter-container">
+            <div class="filter-title">
+              Season
+            </div>
+            <div class="filter-control-container">
+              <select class="filter-control" [formControlName]="filterKeyConstants.SEASON">
+                <option value="-" [disabled]="true" [attr.selected]="true">Select site</option>
+                <option *ngFor="let season of seasonData"
+                        [value]="season.value">
+                  {{season.label}}
+                </option>
+              </select>
+              <button class="filter-add-btn" (click)="addFilter(filterKeyConstants.SEASON)">ADD</button>
+            </div>
+          </div>
+          <!--Contest Type-->
+          <div class="filter-container">
+            <div class="filter-title">
+              Contest Type
+            </div>
+            <div class="filter-control-container">
+              <select class="filter-control" [formControlName]="filterKeyConstants.CONTEST_TYPE">
+                <option value="-" [disabled]="true" [attr.selected]="true">Select type</option>
+                <option *ngFor="let type of contestData"
+                        [value]="type.value">
+                  {{type.label}}
+                </option>
+              </select>
+              <button class="filter-add-btn" (click)="addFilter(filterKeyConstants.CONTEST_TYPE)">ADD</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+            Entry Date</a>
+        </h4>
+      </div>
+      <div id="collapse2" class="panel-collapse collapse">
+        <div class="panel-body">
+          <!--Time Period-->
+          <div class="filter-container">
+            <div class="filter-title">
+              Time Period
+            </div>
+            <div class="filter-control-container">
+              <select class="filter-control" [formControlName]="filterKeyConstants.TIME_PERIOD">
+                <option value="-" [disabled]="true" [attr.selected]="true">Select period</option>
+                <option *ngFor="let timeData of timePeriodData"
+                        [value]="timeData.value">
+                  {{timeData.label}}
+                </option>
+              </select>
+              <button class="filter-add-btn" (click)="addFilter(filterKeyConstants.TIME_PERIOD)">ADD</button>
+            </div>
+          </div>
+          <!--Weekday-->
+          <div class="filter-container">
+            <div class="filter-title">
+              Weekday
+            </div>
+            <div class="filter-control-container">
+              <select class="filter-control" [formControlName]="filterKeyConstants.WEEK_DAY">
+                <option value="-" [disabled]="true" [attr.selected]="true">Select period</option>
+                <option *ngFor="let timeData of weekdayData"
+                        [value]="timeData.value">
+                  {{timeData.label}}
+                </option>
+              </select>
+              <button class="filter-add-btn" (click)="addFilter(filterKeyConstants.WEEK_DAY)">ADD</button>
+            </div>
+          </div>
+          <!--DateFrom-->
+          <div class="filter-container">
+            <div class="filter-title">
+              Date from
+            </div>
+            <div class="filter-control-container">
+              <p-calendar type="date"
+                          [maxDate]="maxDate"
+                          inputStyleClass="filter-control"
+                          class="filter-control"
+                          [formControlName]="filterKeyConstants.DATE_FROM"></p-calendar>
+              <button class="filter-add-btn" (click)="addFilter(filterKeyConstants.DATE_FROM)">ADD</button>
+            </div>
+          </div>
+          <!--Date To-->
+          <div class="filter-container">
+            <div class="filter-title">
+              Date to
+            </div>
+            <div class="filter-control-container">
+              <p-calendar type="date"
+                          [maxDate]="maxDate"
+                          inputStyleClass="filter-control"
+                          class="filter-control"
+                          [formControlName]="filterKeyConstants.DATE_TO"></p-calendar>
+              <button class="filter-add-btn" (click)="addFilter(filterKeyConstants.DATE_TO)">ADD</button>
+            </div>
+          </div>
+          <!--Date Exact-->
+          <div class="filter-container">
+            <div class="filter-title">
+              Date exect
+            </div>
+            <div class="filter-control-container">
+              <p-calendar type="date"
+                          [maxDate]="maxDate"
+                          inputStyleClass="filter-control"
+                          class="filter-control"
+                          [formControlName]="filterKeyConstants.DATE_EXACT"></p-calendar>
+              <button class="filter-add-btn" (click)="addFilter(filterKeyConstants.DATE_EXACT)">ADD</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+            Entry Fee</a>
+        </h4>
+      </div>
+      <div id="collapse3" class="panel-collapse collapse">
+        <div class="panel-body">
+          <!--Entry Fee-->
+          <div class="filter-container">
+            <div class="filter-title">
+              Entry Fee
+            </div>
+            <div class="filter-control-container" [formGroup]="filterForm.get(filterKeyConstants.FEE)">
+              <select class="filter-control" [formControlName]="'min'">
+                <option value="-" [disabled]="true" [attr.selected]="true">min</option>
+                <option *ngFor="let feeData of entryFeeData"
+                        [value]="feeData.value">
+                  {{feeData.label}}
+                </option>
+              </select>
+              <select class="filter-control" [formControlName]="'max'">
+                <option value="-" [disabled]="true" [attr.selected]="true">max</option>
+                <option *ngFor="let feeData of entryFeeData"
+                        [value]="feeData.value">
+                  {{feeData.label}}
+                </option>
+              </select>
+              <button class="filter-add-btn" (click)="addFilter(filterKeyConstants.FEE)">ADD</button>
+            </div>
+          </div>
+          <!--Freeroll filter-->
+          <div class="filter-container">
+            <div class="filter-title">
+              Freeroll filter
+            </div>
+            <div class="filter-control-container">
+              <select class="filter-control" [formControlName]="filterKeyConstants.FREE_ROLL">
+                <option value="-" [disabled]="true" [attr.selected]="true">Filter by freeroll</option>
+                <option value="0" [attr.selected]="true">Freerolls only</option>
+                <option value="1" [attr.selected]="true">Exclude freerolls</option>
+              </select>
+              <button class="filter-add-btn" (click)="addFilter(filterKeyConstants.FREE_ROLL)">ADD</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
+            Your Entries
+          </a>
+        </h4>
+      </div>
+      <div id="collapse4" class="panel-collapse collapse">
+        <div class="panel-body">
+          <!--Number of contest entries-->
+          <div class="filter-container">
+            <div class="filter-title">
+              Number of contest entries
+            </div>
+            <div class="filter-control-container"
+                 [formGroup]="filterForm.get(filterKeyConstants.NO_OF_CONTEST_ENTRIES)">
+              <select class="filter-control" [formControlName]="'min_contest'">
+                <option value="-" [disabled]="true" [attr.selected]="true">min</option>
+                <option *ngFor="let entryData of contestEntriesData"
+                        [value]="entryData.value">
+                  {{entryData.label}}
+                </option>
+              </select>
+              <select class="filter-control" [formControlName]="'max_contest'">
+                <option value="-" [disabled]="true" [attr.selected]="true">max</option>
+                <option *ngFor="let entryData of contestEntriesData"
+                        [value]="entryData.value">
+                  {{entryData.label}}
+                </option>
+              </select>
+              <button class="filter-add-btn" (click)="addFilter(filterKeyConstants.NO_OF_CONTEST_ENTRIES)">ADD</button>
+            </div>
+          </div>
+          <!--Max contest entries per player-->
+          <div class="filter-container">
+            <div class="filter-title">
+              Max contest entries per player
+            </div>
+            <div class="filter-control-container">
+              <select class="filter-control" [formControlName]="filterKeyConstants.MAX_CONTEST_ENTRIES">
+                <option value="-" [disabled]="true" [attr.selected]="true">Select limit</option>
+                <option *ngFor="let maxEntryData of maxContestEntriesData"
+                        [value]="maxEntryData.value">
+                  {{maxEntryData.label}}
+                </option>
+              </select>
+              <button class="filter-add-btn" (click)="addFilter(filterKeyConstants.MAX_CONTEST_ENTRIES)">ADD</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">
+            Total Contest Entries
+          </a>
+        </h4>
+      </div>
+      <div id="collapse5" class="panel-collapse collapse">
+        <div class="panel-body">
+          <!--Max contest entries per player-->
+          <div class="filter-container">
+            <div class="filter-title">
+              Range of total entries
+            </div>
+            <div class="filter-control-container">
+              <select class="filter-control" [formControlName]="filterKeyConstants.RANGE_OF_TOTAL_ENTRIES">
+                <option value="-" [disabled]="true" [attr.selected]="true">Select range</option>
+                <option *ngFor="let maxEntryData of rangeOfEntriesData"
+                        [value]="maxEntryData.value">
+                  {{maxEntryData.label}}
+                </option>
+              </select>
+              <button class="filter-add-btn" (click)="addFilter(filterKeyConstants.RANGE_OF_TOTAL_ENTRIES)">ADD</button>
+            </div>
+          </div>
+          <!--Exact number of entries-->
+          <div class="filter-container">
+            <div class="filter-title">
+              Exact number of entries
+            </div>
+            <div class="filter-control-container">
+              <input type="text" class="filter-control" [formControlName]="filterKeyConstants.EXACT_NO_OF_ENTRIES">
+              <button class="filter-add-btn" (click)="addFilter(filterKeyConstants.EXACT_NO_OF_ENTRIES)">ADD</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse6">
+            Head to Head Opponents
+          </a>
+        </h4>
+      </div>
+      <div id="collapse6" class="panel-collapse collapse">
+        <div class="panel-body">
+          <!--Search by opponent name-->
+          <div class="filter-container">
+            <div class="filter-title">
+              Search by opponent name
+            </div>
+            <div class="filter-control-container">
+              <input type="text" class="filter-control" [formControlName]="filterKeyConstants.OPPONENT_NAME">
+              <button class="filter-add-btn" (click)="addFilter(filterKeyConstants.OPPONENT_NAME)">ADD</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--<pre>{{filterForm.value | json}}</pre>-->
+</form>

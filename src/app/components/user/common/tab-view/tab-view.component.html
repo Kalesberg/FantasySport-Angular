@@ -1,0 +1,15 @@
+<div class="contests">
+  <div class="tabs-container" id="myTabs">
+    <div style="width: 100%">
+      <hr style="border-top:1px solid #555;margin-right:15px">
+    </div>
+    <div *ngFor="let tab of tabs"
+         class="cohort-tab"
+         (click)="onCohortTabChanged(tab)"
+         [class.active]="activeTab == tab.value">{{tab.label}}
+    </div>
+    <div style="width: 100%">
+      <hr style="border-top:1px solid #555;margin-left: 15px">
+    </div>
+  </div>
+</div>

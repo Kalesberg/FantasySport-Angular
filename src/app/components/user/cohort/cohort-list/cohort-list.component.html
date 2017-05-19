@@ -1,0 +1,35 @@
+<md-card>
+  <md-card-content>
+    <div class="cohort-data-container">
+      <p-dataTable [value]="records"
+                   [rows]="20"
+                   [paginator]="(records && records.length > 10)"
+                   [pageLinks]="5"
+                   [rowsPerPageOptions]="[10,20]">
+        <p-column [field]="getTitleField()" header=""></p-column>
+        <p-column field="contests" header="Contest"></p-column>
+        <p-column field="entries" header="Entries"></p-column>
+        <p-column field="itm" header="ITM">
+          <ng-template let-record="rowData" pTemplate="body">
+            <label>{{record['itm']}}%</label>
+          </ng-template>
+        </p-column>
+        <p-column field="roi" header="ROI">
+          <ng-template let-record="rowData" pTemplate="body">
+            <label [ngStyle]="{color: record['roi'] > 0 ? '#4caf50' : 'red'}">
+              {{(record['roi'] != '-') ? record['roi']+'%' : '-'}}
+            </label>
+          </ng-template>
+        </p-column>
+        <p-column field="average_score" header="AV Score"></p-column>
+        <p-column field="average_win_score" header="AV Win Score"></p-column>
+        <p-column field="profit" header="Profit">
+          <ng-template let-record="rowData" pTemplate="body">
+            <label *ngIf="record['net'] >= 0" [ngStyle]="{color: '#4caf50'}">${{record['net'] | number}} </label>
+            <label *ngIf="record['net'] <  0" [ngStyle]="{color: 'red'}">$({{record['net'] * -1 | number}})</label>
+          </ng-template>
+        </p-column>
+      </p-dataTable>
+    </div>
+  </md-card-content>
+</md-card>

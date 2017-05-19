@@ -1,0 +1,579 @@
+/* Write your custom CSS here */
+
+/** header **/
+
+.navbar.bg-clr {
+  background-color: #050706;
+  box-shadow: 0 1px 2px 0 #000;
+}
+
+.navbar .logo-box {
+  background: #050706;
+}
+
+.topmenu-outer {
+  background: #050706;
+}
+
+.logo-text > img {
+  height: 39px;
+}
+
+.top-menu .navbar-nav > li > a {
+  color: #fff;
+}
+
+.nav.navbar-nav.navbar-left {
+  margin-left: 30px;
+}
+
+.activeBankroll {
+  color: #fec524 !important;
+}
+
+.top-menu .navbar-nav > li > a > i.menu-icon {
+  margin-right: 8px;
+}
+
+.top-menu .navbar-nav > li > a > .sign-out > i {
+  margin-left: 5px;
+}
+
+.top-menu .navbar-nav.navbar-right > li > a {
+  padding: 20px 10px;
+}
+
+/** breadcrumb **/
+
+.page-breadcrumb {
+  background: #ffc525 none repeat scroll 0 0;
+  padding: 8px 20px;
+}
+
+.page-breadcrumb ol.breadcrumb li a, .page-breadcrumb ol.breadcrumb li.active, .page-breadcrumb ul li a {
+  color: #000000;
+}
+
+/** inner **/
+
+.info-box .info-box-icon .i-1 i {
+  color: #22baa0 !important;
+}
+
+#flotchart1 > img {
+  height: 100%;
+  max-width: 100%;
+  width: 100%;
+}
+
+.col-md-12 > img {
+  max-width: 100%;
+}
+
+.server-load > img {
+  max-width: 100%;
+}
+
+.blk-bg {
+  background-color: #333333 !important;
+}
+
+/** left sidebar starts **/
+
+.ui-datepicker-trigger.ui-button.ui-widget.ui-state-default.ui-corner-all.ui-button-icon-only {
+  width: 26px;
+}
+
+.ui-overlaypanel.ui-widget.ui-widget-content.ui-corner-all.ui-shadow {
+  width: 380px;
+}
+
+.add_btn_f {
+  background-color: #fec524;
+  border: 1px solid #fec524;
+  border-radius: 5px;
+  float: right;
+  font-weight: 600;
+  padding: 4px 10px;
+}
+
+.add_col {
+  margin-bottom: 15px;
+  position: relative;
+}
+
+p-calendar {
+
+}
+
+.margin-z label {
+  float: left;
+}
+
+.results {
+  padding-bottom: 245px;
+  padding-top: 50px;
+}
+
+.add-filter {
+  background-color: #ffffff;
+  border: 1px solid #fec524;
+  border-radius: 7px;
+}
+
+.add-filter h4 {
+  background-color: #fec524;
+  border: 1px solid #fec524;
+  border-radius: 7px 7px 0 0;
+  color: #333333;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 15px;
+  text-align: center;
+  margin: 0px;
+}
+
+.dropdown.bdr-btm {
+  border-bottom: 1px solid #fec524;;
+}
+
+.btn-filter {
+  background-color: #ffffff;
+  border: medium none;
+  font-size: 17px;
+  text-align: left;
+  width: 100%;
+}
+
+.filter-tabs i {
+  color: #fec524;
+}
+
+.filter-tabs .btn .caret {
+  border-bottom: 4px solid rgba(0, 0, 0, 0);
+  border-left: 4px solid;
+  border-top: 4px solid rgba(0, 0, 0, 0);
+  display: inline-block;
+  float: right;
+  height: 0;
+  vertical-align: middle;
+  width: 0;
+}
+
+.tab-content {
+  padding: 0px !important;
+}
+
+.dropdown-menu.pop-div {
+  left: 95%;
+  margin-top: 0;
+  padding: 20px 0;
+  position: absolute;
+  top: 0;
+  width: 511px;
+}
+
+.dropdown-menu.pop-div input {
+  background-color: #ededed;
+  border: medium none;
+  border-radius: 5px;
+  color: #333333;
+  font-size: 15px;
+  height: 40px;
+  margin-bottom: 20px;
+  padding: 0 10px;
+  width: 100%;
+}
+
+.dropdown-menu.pop-div select {
+  background-color: #ededed;
+  border: medium none;
+  border-radius: 5px;
+  color: #333333;
+  font-size: 15px;
+  height: 40px;
+  margin-bottom: 20px;
+  padding: 0 10px;
+  width: 100%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.f-add {
+  border-top: 1px solid #dddddd;
+  padding: 20px 20px 10px;
+}
+
+.ui-overlaypanel-content {
+  padding: 20px 0px 5px;
+}
+
+.f-add > button {
+  background-color: #fec524;
+  border: 1px solid #fec524;
+  border-radius: 5px;
+  float: right;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 4px 25px;
+}
+
+.dropdown.bdr-btm:last-child {
+  border-bottom: none;
+}
+
+.dropdown.bdr-btm:last-child .btn.btn-filter.dropdown-toggle {
+  border-radius: 5px;
+}
+
+.bdr-btm span {
+  float: left;
+}
+
+.bdr-btm i {
+  text-align: right !important;
+}
+
+/** left sidebar end **/
+/** opponents start **/
+
+.opponents {
+  background-color: #dddddd;
+  border: 1px solid #bbbbbb;
+  border-radius: 7px;
+  padding: 15px 20px;
+  font-size: 15px;
+}
+
+/** opponents end **/
+
+/** footer **/
+
+.page-footer {
+  background: #ffc525 none repeat scroll 0 0;
+  color: #000000;
+  text-align: center;
+}
+
+.page-inner {
+  margin-top: 30px;
+}
+
+.ui-overlaypanel.ui-widget.ui-widget-content.ui-corner-all.ui-shadow {
+  top: 0 !important;
+  left: 90% !important;
+}
+
+body .ui-button {
+  background-color: #fff;
+  border: 1px solid transparent;
+  color: #333333;
+  font-size: 17px;
+  padding: 6px 12px;
+  transition: background-color 0.3s ease 0s;
+  width: 100%;
+  border-radius: 0px;
+}
+
+.bdr-btm span {
+  padding: 0 !important;
+}
+
+.dropdown.bdr-btm:last-child .ui-button {
+  border-radius: 0 0 7px 7px;
+}
+
+.dropdown.bdr-btm .ui-button:hover {
+  color:#ffc107;
+  background-color:#111 !important;
+}
+
+.dropdown.bdr-btm .ui-button:active {
+  color:#ffc107;
+  background-color:#111 !important;
+}
+.dropdown.bdr-btm .ui-button:focus {
+  color:#ffc107;
+  background-color:#111 !important;
+}
+
+.w-100 {
+  left: 92% !important;
+  width: 450px;
+}
+
+.ui-overlaypanel-content .col-sm-6 > input {
+  background-color: #efefef;
+  border: 0 none;
+  color: #333333;
+  font-size: 15px !important;
+  padding: 5px 10px;
+  margin-right: 15px !important;
+  margin-bottom: 15px;
+  border-radius: 5px;
+}
+
+.ui-overlaypanel-content .col-sm-6 > select {
+  background-color: #efefef;
+  border: 0 none;
+  color: #333333;
+  font-size: 15px !important;
+  padding: 5px 10px;
+  width: 100%;
+  margin-bottom: 15px;
+  border-radius: 5px;
+}
+
+.margin-z {
+  margin: 0px !important;
+}
+
+.opponents {
+  padding: 0px;
+}
+
+.opponents table th {
+  background-color: #3f5465;
+  color: white;
+  font-weight: normal;
+}
+
+.table > thead > tr > th:first-child {
+  border-radius: 7px 0 0;
+}
+
+/*Contest*/
+
+.hr-divider {
+  font-size: 15px;
+  line-height: 20px;
+  position: relative;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.hr-divider .nav::before {
+  background-color: #333333;
+  content: "";
+  display: block;
+  height: 1px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 60px;
+}
+
+.hr-divider .nav::after {
+  background-color: #333333;
+  content: "";
+  display: block;
+  height: 1px;
+  left: 0;
+  position: absolute;
+  top: 50%;
+  width: 60px;
+}
+
+.m-b {
+  margin-bottom: 20px !important;
+}
+
+.hr-divider ul {
+  border: medium none;
+  display: inline-block;
+  padding: 0 60px !important;
+  position: relative;
+}
+
+.contests .nav-tabs > li > a {
+  border: none;
+  border-radius: 5px;
+  padding: 7px 14px;
+
+}
+
+.contests .nav-tabs > li > a:hover {
+  background-color: #fec524 !important;
+  color: #333333;
+}
+
+.contests table {
+  border: 1px solid #dddddd;
+  border-collapse: inherit;
+  border-radius: 7px;
+  font-size: 14px;
+  max-width: 100%;
+  text-align: center;
+  width: 100%;
+}
+
+.contests table thead tr {
+
+  color: white;
+}
+
+.contests table tr th {
+  border-right: 1px solid #dddddd;
+  font-weight: 500;
+  text-align: center;
+  padding: 15px 0;
+  background-color: #3f5465;
+}
+
+.contests table tr th:first-child {
+  border-radius: 7px 0 0 0;
+}
+
+.contests table tr th:last-child {
+  border-radius: 0 7px 0 0;
+}
+
+.per12 {
+  width: 12%;
+}
+
+.contests table tbody tr:nth-child(2n+1) {
+  background-color: #fff;
+}
+
+.contests table tbody tr:nth-child(even) {
+  background-color: #efefef;
+}
+
+.contests table tr td {
+  padding: 15px 0;
+}
+
+.green-td {
+  color: #1bc98e;
+}
+
+.red-td {
+  color: #d9534f;
+}
+
+/** current-filter **/
+
+.current-filter {
+  background-color: #ffffff;
+  margin-top: 30px;
+}
+
+.current-filter h4 {
+  background-color: #fec524;
+  border: 1px solid #fec524;
+  border-radius: 7px 7px 0 0;
+  color: #333333;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 15px;
+  text-align: center;
+}
+
+.current-filter-t {
+  background-color: #ffffff;
+  border: medium none;
+  font-size: 17px;
+  padding: 6px 12px;
+  text-align: left;
+  width: 100%;
+  border-bottom: 1px solid #fec524;
+}
+
+.current-filter-t:last-child {
+  border-bottom: medium none;
+  border-radius: 7px;
+}
+
+/** overview page **/
+
+.per20 {
+  width: 20%;
+}
+
+.overview table tr td:first-child {
+  padding-left: 15px;
+  text-align: left;
+}
+
+/** overview end **/
+
+/** graph page **/
+
+.graph {
+  background-color: #fff;
+  text-align: center;
+}
+
+.graph img {
+  width: 100%;
+}
+
+.graph h2 {
+  font-size: 25px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.graph h6 {
+  font-size: 13px;
+  padding-bottom: 10px;
+}
+
+/** graph end **/
+
+/** upload page **/
+
+.per25 {
+  width: 25%;
+}
+
+.upload table tr td:first-child {
+  padding-left: 15px;
+  text-align: left;
+}
+
+.contest_h {
+  text-align: left;
+}
+
+.contest_h h3 {
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.contest_h p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+.upload_info {
+  margin-top: 30px;
+}
+
+.upload_info li {
+  border-bottom: 1px solid #dddddd;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+}
+
+.upload_info > a {
+  border-bottom: 1px solid #dddddd;
+  font-size: 13px;
+  padding-bottom: 5px;
+}
+
+.upload_info > ul {
+  list-style: outside none none;
+  padding-left: 0;
+}
+
+.dz-message{
+  flex:1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/** upload end **/

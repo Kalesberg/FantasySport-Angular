@@ -1,0 +1,23 @@
+
+<section>
+	<div class="container">
+		<div class="login">
+			<h3>Sign in to your account</h3>
+			<div class="login-in">
+				<div class="error-msg" *ngIf="isUnverified">Your email is not verified.Please <a [routerLink] = "['/verify']">click here</a> to verify email.</div>
+				<div class="error-msg" *ngIf="isError">{{errorMsg}}</div>
+        <form (ngSubmit)="onSignIn(f)" #f="ngForm">
+					<fieldset>
+						<input type="email" name="email" ngModel class="form-control" placeholder="Email" required>
+						<input type="password" class="form-control" placeholder="Password" name="password" ngModel required>
+						<button type="submit" [disabled]="!f.form.valid">Login</button>
+						<span>
+				<a [routerLink] = "['/verify']">Forgot Username or Password?</a><br>
+				<a [routerLink] = "['/register']">Register for account</a>
+			</span>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+	</div>
+</section>
